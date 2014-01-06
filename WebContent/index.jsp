@@ -3,9 +3,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title>WebStore</title>
+	 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	 <title>WebStore</title>
 	 <link rel="stylesheet" type="text/css" href="css/affablebean.css">
+	 <link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 <body>
     <div id="main">
@@ -22,22 +23,44 @@
    			 </div>
 
 		    <a href="#">
-		        <img src="#" id="logo" alt="Affable Bean logo">
+		        <img src="img/logo.png" id="logo" alt="Affable Bean logo">
 		    </a>
 		
-		    <img src="#" id="logoText" alt="the affable bean">
+		    <img src="img/logoText.png" id="logoText" alt="the affable bean">
         </div>
 
         <div id="indexLeftColumn">
-            left column
+            <div id="welcomeText">
+                 <p>[ welcome text ]</p>
+            </div>
         </div>
 
         <div id="indexRightColumn">
-            right column
-        </div>
+			    <div class="categoryBox">
+			        <a href="#">
+			            <span class="categoryLabelText">dairy</span>
+			        </a>
+			    </div>
+			    <div class="categoryBox">
+			        <a href="#">
+			            <span class="categoryLabelText">meats</span>
+			        </a>
+			    </div>
+			    <div class="categoryBox">
+			        <a href="#">
+			            <span class="categoryLabelText">bakery</span>
+			        </a>
+			    </div>
+			    <div class="categoryBox">
+			        <a href="#">
+			            <span class="categoryLabelText">fruit & veg</span>
+			        </a>
+			    </div>
+		</div>
 
         <div id="footer">
-            footer
+            <hr>
+    		<p id="footerText">[ footer text ]</p>
         </div>
     </div>
 </body>

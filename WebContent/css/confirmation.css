@@ -1,0 +1,33 @@
+@CHARSET "ISO-8859-1";
+
+.summaryColumn {
+    margin-top: 15px;
+    width: 50%;
+    float: left;
+}
+
+#singleColumn {
+    margin: 20px 30px;
+    text-align: left;
+}
+
+#orderSummaryTable {
+    width: 100%;
+    text-align: left;
+    height: 200px;
+}
+
+#deliveryAddressTable {
+    width: 70%;
+    margin-left: 15%;
+    text-align: left;
+    height: 200px;
+}
+
+#confirmationText {
+    margin: 0 20px 20px;
+    padding: 10px;
+    background-color: #f5eabe;
+    float: left;
+    width:540px;
+}
