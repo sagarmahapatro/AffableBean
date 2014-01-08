@@ -1,67 +1,30 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-	 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	 <title>WebStore</title>
-	 <link rel="stylesheet" type="text/css" href="css/affablebean.css">
-	 <link rel="stylesheet" type="text/css" href="css/index.css">
-</head>
-<body>
-    <div id="main">
-        <div id="header">
-           <div id="widgetBar">
-		        <div class="headerWidget">
-		            [ language toggle ]
-		        </div>
-		
-		        <div class="headerWidget">
-		            [ shopping cart widget ]
-		        </div>
-
-   			 </div>
-
-		    <a href="#">
-		        <img src="img/logo.png" id="logo" alt="Affable Bean logo">
-		    </a>
-		
-		    <img src="img/logoText.png" id="logoText" alt="the affable bean">
-        </div>
-
-        <div id="indexLeftColumn">
+<%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<div id="indexLeftColumn">
             <div id="welcomeText">
-                 <p>[ welcome text ]</p>
+                  <p style="font-size: larger">Welcome to the online home of the Affable Bean Green Grocer.</p>
+
+                    <p>Enjoy browsing and learning more about our unique home delivery
+                        service bringing you fresh organic produce, dairy, meats, breads
+                        and other delicious and healthy items to your doorstep.</p>
             </div>
         </div>
 
         <div id="indexRightColumn">
-			    <div class="categoryBox">
-			        <a href="#">
-			            <span class="categoryLabelText">dairy</span>
-			        </a>
-			    </div>
-			    <div class="categoryBox">
-			        <a href="#">
-			            <span class="categoryLabelText">meats</span>
-			        </a>
-			    </div>
-			    <div class="categoryBox">
-			        <a href="#">
-			            <span class="categoryLabelText">bakery</span>
-			        </a>
-			    </div>
-			    <div class="categoryBox">
-			        <a href="#">
-			            <span class="categoryLabelText">fruit & veg</span>
-			        </a>
-			    </div>
-		</div>
+                <sql:query var="categories" dataSource="jdbc/affablebean">
+                     SELECT * FROM category
+                </sql:query> 
+			    <c:forEach var="category" items="${categories.rows}">
+                    <div class="categoryBox">
+                        <a href="category?${category.id}">
 
-        <div id="footer">
-            <hr>
-    		<p id="footerText">[ footer text ]</p>
-        </div>
-    </div>
-</body>
-</html>
+                            <span class="categoryLabelText">${category.name}</span>
+
+                            <img src="${initParam.categoryImagePath}${category.name}.jpg"
+                                 alt="${category.name}">
+                        </a>
+                    </div>
+                </c:forEach>
+         </div>
+
+  

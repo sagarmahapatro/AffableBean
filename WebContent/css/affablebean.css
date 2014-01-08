@@ -15,7 +15,10 @@ table {
     text-align: center;
     border: solid 1px #f5eabe;
 }
-
+a {
+    color: inherit;
+    text-decoration: underline;
+}
 .lightBlue { background-color: #edf8f7 }
 
 .white { background-color: #fff }
@@ -26,6 +29,10 @@ table {
     padding: 5px;
     color: inherit;
 }
+
+a:hover { text-decoration: none }
+
+a:visited { color: inherit }
 
 .hMargin { margin: 0 30px }
 
